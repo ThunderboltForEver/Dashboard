@@ -1,5 +1,5 @@
 # Dashboard
 Dashboard using Pure Html and CSS
 
-#Demo:
+# Demo:
 https://thunderboltforever.github.io/Dashboard/
