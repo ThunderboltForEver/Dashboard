@@ -32,7 +32,7 @@ body {
 }
 @media (max-width: 767px) {
   .page-content {
-    grid-template-columns: 60px 1fr;
+    grid-template-columns: 0 1fr;
   }
 }
 .sidebar {
@@ -43,23 +43,42 @@ body {
   flex-direction: column;
   box-shadow: 0 0 10px 0px #ddd;
   position: relative;
+  transition: transform 0.45s;
+  -webkit-transition: transform 0.45s;
+  -moz-transition: transform 0.45s;
+  -ms-transition: transform 0.45s;
+  -o-transition: transform 0.45s;
 }
 @media (max-width: 767px) {
   .sidebar {
-    width: 60px;
-    align-items: center;
+    z-index: 1000;
+    transform: translateX(-220px);
+    -webkit-transform: translateX(-220px);
+    -moz-transform: translateX(-220px);
+    -ms-transform: translateX(-220px);
+    -o-transform: translateX(-220px);
+  }
+}
+@media (min-width: 768px) {
+  .sidebar .xmark {
+    display: none;
   }
 }
 .sidebar .brand {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin: 0 0 var(--secondary-margin);
   position: relative;
 }
 @media (max-width: 767px) {
   .sidebar .brand {
-    margin: 0;
+    margin: 10px;
   }
+}
+.sidebar .brand i {
+  position: absolute;
+  left: 0;
 }
 .sidebar .brand h3 {
   padding: 0 0 var(--third-paddind);
@@ -116,11 +135,6 @@ body {
   -ms-border-radius: var(--secondary-radius);
   -o-border-radius: var(--secondary-radius);
 }
-@media (max-width: 767px) {
-  .sidebar ul li a span {
-    display: none;
-  }
-}
 .sidebar ul li a:hover,
 .sidebar ul li a.active {
   background-color: var(--secondary-color);
@@ -139,6 +153,11 @@ body {
   align-items: center;
   background-color: #fff;
   padding: var(--third-paddind);
+}
+@media (min-width: 768px) {
+  .header .bar-item {
+    display: none;
+  }
 }
 .header .search {
   position: relative;
@@ -182,13 +201,15 @@ body {
   display: flex;
   align-items: center;
   gap: var(--fourth-paddind);
+}
+.header .profile .bell {
   position: relative;
 }
-.header .profile::before {
+.header .profile .bell::before {
   content: "";
   position: absolute;
-  top: 0px;
-  right: 42px;
+  top: -6px;
+  right: -4px;
   width: 10px;
   height: 10px;
   background-color: red;
