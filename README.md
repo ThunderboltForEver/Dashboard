@@ -1,2 +1,5 @@
 # Dashboard
-Dashboard using Pure Html and CSS
+Resonsive Multi-Pages Dashboard using Pure Html and CSS
+
+# Demo:
+https://thunderboltforever.github.io/Dashboard/
