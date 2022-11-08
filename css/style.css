@@ -808,3 +808,184 @@ main .main-content .title::after {
 .main-content-boxes .box .latest-uploads .latest-uploads-info h4 {
   font-weight: 500;
 }
+.main-content-boxes .box .last-project-progress {
+  padding-top: var(--secondary-paddind);
+  position: relative;
+}
+.main-content-boxes .box .last-project-progress .last-project-progress-info {
+  padding: 0 var(--main-paddind);
+}
+.main-content-boxes .box .last-project-progress .last-project-progress-info ul {
+  list-style: none;
+}
+.main-content-boxes
+  .box
+  .last-project-progress
+  .last-project-progress-info
+  ul
+  li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: var(--secondary-paddind) 0;
+}
+.main-content-boxes
+  .box
+  .last-project-progress
+  .last-project-progress-info
+  ul
+  li
+  span {
+  position: absolute;
+  left: -30px;
+  width: 18px;
+  height: 18px;
+  background-color: var(--blue-color);
+  border-radius: var(--main-radius);
+  -webkit-border-radius: var(--main-radius);
+  -moz-border-radius: var(--main-radius);
+  -ms-border-radius: var(--main-radius);
+  -o-border-radius: var(--main-radius);
+}
+.main-content-boxes
+  .box
+  .last-project-progress
+  .last-project-progress-info
+  ul
+  li:last-child
+  span {
+  background-color: #fff;
+}
+.main-content-boxes
+  .box
+  .last-project-progress
+  .last-project-progress-info
+  ul
+  li:nth-child(4)
+  span {
+  animation: blueAndwhite 1.5s infinite ease-in-out;
+  -webkit-animation: blueAndwhite 1.5s infinite ease-in-out;
+}
+.main-content-boxes
+  .box
+  .last-project-progress
+  .last-project-progress-info
+  ul
+  li
+  span::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 22px;
+  height: 22px;
+  background-color: transparent;
+  border: 3px solid var(--blue-color);
+  border-radius: var(--main-radius);
+  -webkit-border-radius: var(--main-radius);
+  -moz-border-radius: var(--main-radius);
+  -ms-border-radius: var(--main-radius);
+  -o-border-radius: var(--main-radius);
+}
+.main-content-boxes
+  .box
+  .last-project-progress
+  .last-project-progress-info
+  ul
+  li:not(li:last-child)
+  span::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: calc((var(--secondary-paddind) * 2) - 2px);
+  background-color: var(--blue-color);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+@keyframes blueAndwhite {
+  0% {
+    background-color: #fff;
+  }
+  100% {
+    background-color: var(--blue-color);
+  }
+}
+.main-content-boxes .box .last-project-progress img {
+  width: 180px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  opacity: 0.3;
+}
+@media (max-width: 767px) {
+  .main-content-boxes .box .last-project-progress img {
+    display: none;
+  }
+}
+.main-content-boxes .box .reminders-section2 {
+  padding-left: var(--third-paddind);
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.main-content-boxes .box .reminders-section2 .reminders {
+  padding-left: var(--third-paddind);
+  border-left: 2px solid var(--blue-color);
+  line-height: 1.8;
+  position: relative;
+}
+@media (max-width: 767px) {
+  .main-content-boxes .box .reminders-section2 .reminders {
+    margin: var(--fourth-margin);
+  }
+}
+.main-content-boxes .box .reminders-section2 .reminders h4 {
+  font-size: 0.95rem;
+}
+.main-content-boxes .box .reminders-section2 .reminders p {
+  font-size: 0.8rem;
+  color: var(--third-color);
+}
+.main-content-boxes .box .reminders-section2 .reminders::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -23px;
+  width: 13px;
+  height: 13px;
+  background-color: var(--blue-color);
+  border-radius: var(--main-radius);
+  -webkit-border-radius: var(--main-radius);
+  -moz-border-radius: var(--main-radius);
+  -ms-border-radius: var(--main-radius);
+  -o-border-radius: var(--main-radius);
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+.main-content-boxes .box .reminders-section2 .reminders:nth-child(2) {
+  border-left: 2px solid var(--green-color);
+}
+.main-content-boxes .box .reminders-section2 .reminders:nth-child(2):before {
+  background-color: var(--green-color);
+}
+.main-content-boxes .box .reminders-section2 .reminders:nth-child(3) {
+  border-left: 2px solid var(--orange-color);
+}
+.main-content-boxes .box .reminders-section2 .reminders:nth-child(3):before {
+  background-color: var(--orange-color);
+}
+.main-content-boxes .box .reminders-section2 .reminders:nth-child(4) {
+  border-left: 2px solid red;
+}
+.main-content-boxes .box .reminders-section2 .reminders:nth-child(4):before {
+  background-color: red;
+}
