@@ -40,6 +40,39 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--blue-color);
 }
+.loader {
+  height: 100vh;
+  width: 100%;
+  background-color: var(--main-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+@media (max-width: 767px) {
+  .loader {
+    font-size: 1rem;
+  }
+}
+.loader h1 {
+  position: relative;
+  color: var(--blue-color);
+}
+.loader h1 span {
+  position: absolute;
+  width: 52px;
+  overflow: hidden;
+  animation: load 0.9s infinite linear;
+  -webkit-animation: load 0.9s infinite linear;
+}
+@keyframes load {
+  0% {
+    width: 5px;
+  }
+}
 .page-content {
   min-height: 100vh;
   background-color: var(--main-color);
