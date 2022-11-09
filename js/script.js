@@ -36,3 +36,10 @@ document.onclick = (e) => {
     }
   }
 };
+window.addEventListener("scroll", () => {
+  if (getSideBar.classList.contains("sidebar-active")) {
+    getSideBar.style =
+      "transform: translateX(-220px);width:220px;box-shadow:none;";
+    getSideBar.classList.remove("sidebar-active");
+  }
+});
