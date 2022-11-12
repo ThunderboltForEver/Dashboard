@@ -6,6 +6,9 @@
 body {
   font-family: "Open Sans", sans-serif;
 }
+ul {
+  list-style: none;
+}
 :root {
   --main-color: #f1f5f9;
   --secondary-color: #f6f6f6;
@@ -40,7 +43,7 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--blue-color);
 }
-.loader {
+div.loader {
   height: 100vh;
   width: 100%;
   background-color: var(--main-color);
@@ -53,15 +56,15 @@ body {
   z-index: 1000;
 }
 @media (max-width: 767px) {
-  .loader {
+  div.loader {
     font-size: 1rem;
   }
 }
-.loader h1 {
+div.loader h1 {
   position: relative;
   color: var(--blue-color);
 }
-.loader h1 span {
+div.loader h1 span {
   position: absolute;
   width: 52px;
   overflow: hidden;
@@ -76,8 +79,11 @@ body {
 .page-content {
   min-height: 100vh;
   background-color: var(--main-color);
-  display: none;
+  display: grid;
   grid-template-columns: 220px 1fr;
+}
+.index-page {
+  display: none;
 }
 @media (max-width: 767px) {
   .page-content {
@@ -1021,4 +1027,129 @@ main .main-content .title::after {
 }
 .main-content-boxes .box .reminders-section2 .reminders:nth-child(4):before {
   background-color: red;
+}
+.main-content-boxes .box .latest-post-section2 {
+  padding-top: var(--secondary-paddind);
+  display: flex;
+  flex-direction: column;
+  gap: var(--secondary-paddind);
+}
+.main-content-boxes .box .latest-post-section2 .latest-post-person-info {
+  display: flex;
+  align-items: center;
+  gap: var(--third-paddind);
+}
+.main-content-boxes .box .latest-post-section2 .latest-post-person-info img {
+  width: 50px;
+}
+.main-content-boxes
+  .box
+  .latest-post-section2
+  .latest-post-person-info
+  ul
+  li:nth-child(1) {
+  padding-bottom: var(--fifth-padding);
+}
+.main-content-boxes
+  .box
+  .latest-post-section2
+  .latest-post-person-info
+  ul
+  li
+  p {
+  color: var(--third-color);
+}
+.main-content-boxes .box .latest-post-section2 .post {
+  padding: var(--secondary-paddind) 0;
+  border-top: 1px solid var(--eee-color);
+  border-bottom: 1px solid var(--eee-color);
+}
+.main-content-boxes .box .latest-post-section2 .post p {
+  font-size: 1rem;
+  line-height: 1.8;
+}
+.main-content-boxes .box .latest-post-section2 .latest-post-likes-comments {
+  padding: var(--fifth-padding) 0;
+}
+.main-content-boxes .box .latest-post-section2 .latest-post-likes-comments ul {
+  display: flex;
+  justify-content: space-between;
+  color: var(--third-color);
+}
+.main-content-boxes
+  .box
+  .latest-post-section2
+  .latest-post-likes-comments
+  ul
+  li
+  i {
+  padding-right: var(--fifth-padding);
+}
+.main-content-boxes .box .social-media-stats {
+  display: flex;
+  flex-direction: column;
+  gap: var(--third-paddind);
+  padding-top: var(--secondary-paddind);
+}
+.main-content-boxes .box .social-media-stats .media {
+  display: flex;
+  align-items: center;
+  gap: var(--third-paddind);
+  padding: 0 var(--fourth-paddind) 0 0;
+}
+.main-content-boxes .box .social-media-stats .media .media-icon {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.main-content-boxes .box .social-media-stats .media ul {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
+.main-content-boxes .box .social-media-stats .media ul li a {
+  padding: var(--fifth-padding);
+  background-color: #1da1f2;
+}
+.main-content-boxes .box .social-media-stats .media:nth-child(1) {
+  background-color: rgb(29 161 242 / 20%);
+}
+.main-content-boxes .box .social-media-stats .media div.twitter {
+  background-color: #1da1f2;
+}
+.main-content-boxes .box .social-media-stats .media ul li.twitter {
+  color: #1da1f2;
+}
+.main-content-boxes .box .social-media-stats .media div.facebook,
+.main-content-boxes .box .social-media-stats .media:nth-child(2) ul li a {
+  background-color: #1877f2;
+}
+.main-content-boxes .box .social-media-stats .media ul li.facebook {
+  color: #1877f2;
+}
+.main-content-boxes .box .social-media-stats .media:nth-child(2) {
+  background-color: rgb(24 119 242 / 20%);
+}
+.main-content-boxes .box .social-media-stats .media div.youtube,
+.main-content-boxes .box .social-media-stats .media:nth-child(3) ul li a {
+  background-color: #f00;
+}
+.main-content-boxes .box .social-media-stats .media ul li.youtube {
+  color: #f00;
+}
+.main-content-boxes .box .social-media-stats .media:nth-child(3) {
+  background-color: rgb(255 0 0 / 20%);
+}
+.main-content-boxes .box .social-media-stats .media div.linkedin,
+.main-content-boxes .box .social-media-stats .media:nth-child(4) ul li a {
+  background-color: #0077b5;
+}
+.main-content-boxes .box .social-media-stats .media ul li.linkedin {
+  color: #0077b5;
+}
+.main-content-boxes .box .social-media-stats .media:nth-child(4) {
+  background-color: rgb(0 119 181 / 20%);
 }

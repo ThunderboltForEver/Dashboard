@@ -1,8 +1,9 @@
 let getBarItem = document.querySelector(".bar-item");
 let getSideBar = document.querySelector(".sidebar");
 let getXmark = document.querySelector(".xmark");
-let getLoader = document.querySelector(".loader");
 let getPageContent = document.querySelector(".page-content");
+let getLoader = document.querySelector(".loader");
+let i = 0;
 
 getBarItem.onclick = () => {
   getSideBar.style = "transform: translateX(0px);width:220px";
@@ -43,3 +44,15 @@ window.addEventListener("scroll", () => {
     getSideBar.classList.remove("sidebar-active");
   }
 });
+function redHeart(e) {
+  let getHeart = document.querySelector(e);
+  if (i === 0) {
+    getHeart.classList.replace("fa-regular", "fa-solid");
+    getHeart.style.color = "red";
+    i++;
+  } else {
+    getHeart.classList.replace("fa-solid", "fa-regular");
+    getHeart.style.color = "#888";
+    i = 0;
+  }
+}
