@@ -3,7 +3,9 @@ let getSideBar = document.querySelector(".sidebar");
 let getXmark = document.querySelector(".xmark");
 let getPageContent = document.querySelector(".page-content");
 let getLoader = document.querySelector(".loader");
-let i = 0;
+let getToggle = document.querySelector(".toggle");
+let i = 0,
+  toggleCounter = 0;
 
 getBarItem.onclick = () => {
   getSideBar.style = "transform: translateX(0px);width:220px";
@@ -54,5 +56,14 @@ function redHeart(e) {
     getHeart.classList.replace("fa-solid", "fa-regular");
     getHeart.style.color = "#888";
     i = 0;
+  }
+}
+function toggle() {
+  if (toggleCounter == 0) {
+    getToggle.classList.add("left");
+    toggleCounter++;
+  } else {
+    getToggle.classList.remove("left");
+    toggleCounter = 0;
   }
 }
