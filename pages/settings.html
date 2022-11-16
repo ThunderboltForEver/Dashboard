@@ -15,7 +15,6 @@
     <title>Settings</title>
   </head>
   <body>
-    <span class="loader"></span>
     <div class="page-content">
       <div class="sidebar">
         <div class="brand">
@@ -108,7 +107,7 @@
                     <p>Website Control</p>
                     <p>Open/Close Website And Type The Reason</p>
                   </div>
-                  <span class="toggle" onclick="toggle()"></span>
+                  <span class="toggle"></span>
                 </div>
                 <form>
                   <textarea
@@ -116,35 +115,96 @@
                     placeholder="Close Message Content"
                   ></textarea>
                 </form>
-
-                <!-- content: "\f00c"; -->
               </div>
             </div>
 
             <div class="box">
-              <div class="box-section1 settings-section1">
+              <div class="box-section1">
                 <div class="box-title">
                   <h2>General Info</h2>
                   <p>General Information About Your Account</p>
                 </div>
               </div>
+              <div class="general-info-section2">
+                <form>
+                  <label for="first-name">First Name</label>
+                  <input type="text" placeholder="First Name" id="first-name" />
+                  <label for="last-name">Last Name</label>
+                  <input type="text" placeholder="Last Name" id="last-name" />
+                  <label for="Email">Email</label>
+                  <div class="email">
+                    <input
+                      type="email"
+                      disabled
+                      id="Email"
+                      value="zana.suleiman.44@gmail.com"
+                    />
+                    <a href="/#">Change</a>
+                  </div>
+                </form>
+              </div>
             </div>
 
             <div class="box">
-              <div class="box-section1 settings-section1">
+              <div class="box-section1">
                 <div class="box-title">
                   <h2>Security Info</h2>
                   <p>Security Information About Your Account</p>
                 </div>
               </div>
+              <div class="security-info-section2">
+                <div class="person-security-info">
+                  <div class="person-info">
+                    <p style="font-weight: normal">Password</p>
+                    <span>Last Change On 25/10/2021</span>
+                  </div>
+                  <a href="/#">Change</a>
+                </div>
+
+                <div class="person-security-info">
+                  <div class="person-info">
+                    <p style="font-weight: normal">Two-Factor Authentication</p>
+                    <span>Enable/Disable The Feature</span>
+                  </div>
+                  <span class="toggle toggle1"></span>
+                </div>
+
+                <div class="person-security-info">
+                  <div class="person-info">
+                    <p style="font-weight: normal">Devices</p>
+                    <span>Check The Login Devices List</span>
+                  </div>
+                  <a href="/#">Devices</a>
+                </div>
+              </div>
             </div>
 
             <div class="box">
-              <div class="box-section1 settings-section1">
+              <div class="box-section1">
                 <div class="box-title">
                   <h2>Social Info</h2>
                   <p>Social Media Information</p>
                 </div>
+              </div>
+              <div class="social-info-section2">
+                <form>
+                  <div class="social-info-icon">
+                    <i class="fa-brands fa-twitter"></i>
+                    <input type="text" placeholder="Twitter Username" />
+                  </div>
+                  <div class="social-info-icon">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <input type="text" placeholder="Facebook Username" />
+                  </div>
+                  <div class="social-info-icon">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <input type="text" placeholder="Linkedin Username" />
+                  </div>
+                  <div class="social-info-icon">
+                    <i class="fa-brands fa-youtube"></i>
+                    <input type="text" placeholder="Youtube Username" />
+                  </div>
+                </form>
               </div>
             </div>
             <div class="box">
@@ -153,6 +213,36 @@
                   <h2>Widgets Control</h2>
                   <p>Show/Hide Widgets</p>
                 </div>
+              </div>
+              <div class="widgets-control-section2">
+                <form>
+                  <ul>
+                    <li>
+                      <input type="checkbox" id="one" />
+                      <label for="one">Quick Draft</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="two" />
+                      <label for="two">Yearly Targets</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="three" />
+                      <label for="three">Tickets Statistics</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="four" />
+                      <label for="four">Latest News</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="five" />
+                      <label for="five">Latest Tasks</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="six" />
+                      <label for="six">Top Search Items</label>
+                    </li>
+                  </ul>
+                </form>
               </div>
             </div>
             <div class="box">

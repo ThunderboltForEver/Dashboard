@@ -3,9 +3,8 @@ let getSideBar = document.querySelector(".sidebar");
 let getXmark = document.querySelector(".xmark");
 let getPageContent = document.querySelector(".page-content");
 let getLoader = document.querySelector(".loader");
-let getToggle = document.querySelector(".toggle");
-let i = 0,
-  toggleCounter = 0;
+let getToggle = document.querySelectorAll(".toggle");
+let getHeart = document.querySelector(".heart");
 
 getBarItem.onclick = () => {
   getSideBar.style = "transform: translateX(0px);width:220px";
@@ -18,13 +17,14 @@ getXmark.onclick = () => {
     getSideBar.classList.remove("sidebar-active");
   }
 };
-
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    getLoader.style.display = "none";
-    getPageContent.style.display = "grid";
-  }, 1000);
-});
+if (getLoader) {
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      getLoader.style.display = "none";
+      getPageContent.style.display = "grid";
+    }, 1000);
+  });
+}
 document.onclick = (e) => {
   if (getSideBar.classList.contains("sidebar-active")) {
     if (
@@ -46,24 +46,23 @@ window.addEventListener("scroll", () => {
     getSideBar.classList.remove("sidebar-active");
   }
 });
-function redHeart(e) {
-  let getHeart = document.querySelector(e);
-  if (i === 0) {
-    getHeart.classList.replace("fa-regular", "fa-solid");
-    getHeart.style.color = "red";
-    i++;
-  } else {
-    getHeart.classList.replace("fa-solid", "fa-regular");
-    getHeart.style.color = "#888";
-    i = 0;
-  }
+if (getHeart) {
+  getHeart.addEventListener("click", (e) => {
+    if (e.target.classList.contains("fa-regular")) {
+      getHeart.classList.replace("fa-regular", "fa-solid");
+      getHeart.style.color = "red";
+    } else {
+      getHeart.classList.replace("fa-solid", "fa-regular");
+      getHeart.style.color = "#888";
+    }
+  });
 }
-function toggle() {
-  if (toggleCounter == 0) {
-    getToggle.classList.add("left");
-    toggleCounter++;
-  } else {
-    getToggle.classList.remove("left");
-    toggleCounter = 0;
-  }
-}
+getToggle.forEach((item) => {
+  item.addEventListener("click", () => {
+    if (item.classList.contains("left")) {
+      item.classList.remove("left");
+    } else {
+      item.classList.add("left");
+    }
+  });
+});

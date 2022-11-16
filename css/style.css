@@ -48,6 +48,63 @@ a {
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--blue-color);
 }
+.toggle {
+  min-width: 70px;
+  height: 30px;
+  background-color: var(--blue-color);
+  border-radius: var(--main-radius);
+  -webkit-border-radius: var(--main-radius);
+  -moz-border-radius: var(--main-radius);
+  -ms-border-radius: var(--main-radius);
+  -o-border-radius: var(--main-radius);
+  position: relative;
+  transition: 0.5s linear;
+  -webkit-transition: 0.5s linear;
+  -moz-transition: 0.5s linear;
+  -ms-transition: 0.5s linear;
+  -o-transition: 0.5s linear;
+  cursor: pointer;
+}
+
+.toggle::before {
+  content: "\f00c";
+  font-weight: 900;
+  font-family: var(--fa-style-family-classic);
+  font-size: 1rem;
+  color: var(--blue-color);
+  position: absolute;
+  top: 50%;
+  right: 3px;
+  width: 24px;
+  height: 24px;
+  background-color: var(--white-color);
+  border-radius: var(--main-radius);
+  -webkit-border-radius: var(--main-radius);
+  -moz-border-radius: var(--main-radius);
+  -ms-border-radius: var(--main-radius);
+  -o-border-radius: var(--main-radius);
+  transition: 0.3s linear;
+  -webkit-transition: 0.3s linear;
+  -moz-transition: 0.3s linear;
+  -ms-transition: 0.3s linear;
+  -o-transition: 0.3s linear;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.left {
+  background-color: #ccc;
+}
+.left::before {
+  content: "\f00d";
+  color: #ccc;
+  right: 43px;
+}
 div.loader {
   height: 100vh;
   width: 100%;
@@ -407,12 +464,13 @@ main .main-content .title::after {
     -o-transform: translateX(-50%);
   }
 }
-.main-content-boxes .box:nth-child(2) form {
+.main-content-boxes .box form {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
-.main-content-boxes .box:nth-child(2) form input[type="text"],
+.main-content-boxes .box form input[type="text"],
+.main-content-boxes .box form input[type="email"],
 .main-content-boxes .box form textarea {
   width: 100%;
   background-color: var(--eee-color);
@@ -927,6 +985,7 @@ main .main-content .title::after {
   width: 22px;
   height: 22px;
   background-color: transparent;
+  box-shadow: 0 0 0 3px white inset;
   border: 3px solid var(--blue-color);
   border-radius: var(--main-radius);
   -webkit-border-radius: var(--main-radius);
@@ -947,7 +1006,7 @@ main .main-content .title::after {
   left: 50%;
   transform: translateX(-50%);
   width: 2px;
-  height: calc((var(--secondary-paddind) * 2) - 2px);
+  height: calc(var(--secondary-paddind) * 2);
   background-color: var(--blue-color);
   -webkit-transform: translateX(-50%);
   -moz-transform: translateX(-50%);
@@ -1092,6 +1151,7 @@ main .main-content .title::after {
   li
   i {
   padding-right: var(--fifth-padding);
+  cursor: pointer;
 }
 .main-content-boxes .box .social-media-stats {
   display: flex;
@@ -1121,6 +1181,7 @@ main .main-content .title::after {
 .main-content-boxes .box .social-media-stats .media ul li a {
   padding: var(--fifth-padding);
   background-color: #1da1f2;
+  border: 0;
 }
 .main-content-boxes .box .social-media-stats .media:nth-child(1) {
   background-color: rgb(29 161 242 / 20%);
@@ -1258,68 +1319,167 @@ main .projects-box .projects-box-section2 table tr td a.rejected {
   font-size: 0.8rem;
   letter-spacing: 0.5px;
 }
-.main-content .box .settings-box-section2 .settings-box-website-control span {
-  min-width: 70px;
-  height: 30px;
-  background-color: var(--blue-color);
-  border-radius: var(--main-radius);
-  -webkit-border-radius: var(--main-radius);
-  -moz-border-radius: var(--main-radius);
-  -ms-border-radius: var(--main-radius);
-  -o-border-radius: var(--main-radius);
-  position: relative;
-  transition: 0.5s linear;
-  -webkit-transition: 0.5s linear;
-  -moz-transition: 0.5s linear;
-  -ms-transition: 0.5s linear;
-  -o-transition: 0.5s linear;
-  cursor: pointer;
+.main-content .box .general-info-section2 form {
+  align-items: flex-start;
 }
-
+.main-content .box .general-info-section2 form label {
+  font-size: 0.9rem;
+  color: var(--third-color);
+}
+.main-content .box .general-info-section2 form input {
+  background-color: var(--white-color);
+  margin-top: var(--fifth-margin);
+  margin-bottom: var(--third-margin);
+}
+.main-content .box .general-info-section2 form input::placeholder {
+  font-size: 0.75rem;
+}
+.main-content .box .general-info-section2 form .email {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: var(--fifth-margin);
+  gap: var(--fourth-paddind);
+}
+.main-content .box .general-info-section2 form .email input[type="email"] {
+  margin: 0;
+  width: 80%;
+  background-color: var(--main-color);
+  color: #aaa;
+  border: 1px solid #ccc;
+  cursor: not-allowed;
+}
+.main-content .box .general-info-section2 form .email a {
+  margin: 0;
+  align-self: center;
+}
+.main-content .box .security-info-section2 {
+  display: flex;
+  flex-direction: column;
+}
+.main-content .box .security-info-section2 .person-security-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--eee-color);
+  padding: var(--fifth-padding) 0;
+}
+.main-content .box .security-info-section2 .person-security-info:last-child a {
+  background-color: var(--main-color);
+  color: #000;
+}
+.main-content .box .security-info-section2 .person-security-info .person-info {
+  line-height: 1.6;
+}
 .main-content
   .box
-  .settings-box-section2
-  .settings-box-website-control
-  span::before {
-  content: "\f00c";
-  font-weight: 900;
-  font-family: var(--fa-style-family-classic);
-  font-size: 1rem;
-  color: var(--blue-color);
-  position: absolute;
-  top: 50%;
-  right: 3px;
-  width: 24px;
-  height: 24px;
-  background-color: var(--white-color);
-  border-radius: var(--main-radius);
-  -webkit-border-radius: var(--main-radius);
-  -moz-border-radius: var(--main-radius);
-  -ms-border-radius: var(--main-radius);
-  -o-border-radius: var(--main-radius);
-  transition: 0.3s linear;
-  -webkit-transition: 0.3s linear;
-  -moz-transition: 0.3s linear;
-  -ms-transition: 0.3s linear;
-  -o-transition: 0.3s linear;
-  transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
+  .security-info-section2
+  .person-security-info
+  .person-info
+  span {
+  font-size: 0.8rem;
+  color: var(--third-color);
+}
+.main-content .box .security-info-section2 .person-security-info:last-child {
+  border-bottom: 0;
+}
+.main-content .box .social-info-section2 form {
+  align-items: flex-start;
+}
+.main-content .box .social-info-section2 form div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: var(--fourth-margin);
+}
+.main-content .box .social-info-section2 form div:nth-child(1) {
+  margin-top: 0;
+}
+.main-content .box .social-info-section2 form div i {
+  width: 40px;
+  height: 37px;
+  background-color: var(--secondary-color);
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid #ccc;
+  border-top-left-radius: var(--secondary-radius);
+  border-bottom-left-radius: var(--secondary-radius);
+  color: var(--third-color);
 }
-.main-content .box .settings-box-section2 .settings-box-website-control .left {
-  background-color: #ccc;
+.main-content .box .social-info-section2 form div input {
+  background-color: var(--secondary-color);
+  margin: 0;
+  border: 1px solid #ccc;
+  border-left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.main-content .box .widgets-control-section2 form {
+  align-items: flex-start;
+}
+.main-content .box .widgets-control-section2 form ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--secondary-paddind);
+}
+.main-content .box .widgets-control-section2 form li {
+  display: flex;
+  align-items: center;
+  padding-left: var(--main-paddind);
+  font-weight: 500;
+}
+.main-content .box .widgets-control-section2 form li label {
+  position: relative;
+}
+.main-content .box .widgets-control-section2 form li label::before,
+.main-content .box .widgets-control-section2 form li label::after {
+  content: "";
+  position: absolute;
+  left: -25px;
+  width: 15px;
+  height: 15px;
+  border: 1px solid var(--third-color);
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+.main-content .box .widgets-control-section2 form li label::after {
+  color: var(--white-color);
+  font-family: var(--fa-style-family-classic);
+  content: "\f00c";
+  font-weight: 900;
+  top: 0px;
+  left: -25px;
+  background-color: var(--blue-color);
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--blue-color);
+  transform: scale(0) rotate(360deg);
+  -webkit-transform: scale(0) rotate(360deg);
+  -moz-transform: scale(0) rotate(360deg);
+  -ms-transform: scale(0) rotate(360deg);
+  -o-transform: scale(0) rotate(360deg);
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+.main-content .box .widgets-control-section2 form input[type="checkbox"] {
+  appearance: none;
 }
 .main-content
   .box
-  .settings-box-section2
-  .settings-box-website-control
-  .left::before {
-  content: "\f00d";
-  color: #ccc;
-  right: 43px;
+  .widgets-control-section2
+  form
+  input[type="checkbox"]:checked
+  + label::after {
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
 }
