@@ -1604,14 +1604,26 @@ main .projects-box .projects-box-section2 table tr td a.rejected {
   -ms-border-radius: var(--first-radius);
   -o-border-radius: var(--first-radius);
 }
+@media (max-width: 767px) {
+  .main-content .profile-box {
+    flex-direction: column;
+  }
+}
 .main-content .profile-box .profile-info {
   width: 300px;
+  padding: var(--secondary-paddind) 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: var(--fourth-paddind);
   border-right: 1px solid var(--eee-color);
+}
+@media (max-width: 767px) {
+  .main-content .profile-box .profile-info {
+    border: none;
+    width: 100%;
+  }
 }
 .main-content .profile-box .profile-info img {
   width: 110px;
@@ -1649,4 +1661,63 @@ main .projects-box .projects-box-section2 table tr td a.rejected {
 }
 .main-content .profile-box .profile-info p:last-of-type {
   font-size: 0.8rem;
+}
+.main-content .profile-box .profile-info-section2 {
+  padding: 0 var(--third-paddind) var(--third-paddind);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.main-content .profile-box .profile-info-section2 .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--third-paddind);
+  border-bottom: 1px solid var(--ccc-color);
+  flex-wrap: wrap;
+}
+@media (max-width: 991px) {
+  .main-content .profile-box .profile-info-section2 .row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--fifth-padding);
+  }
+}
+.main-content .profile-box .profile-info-section2 .row:last-child {
+  border-bottom: 0;
+}
+.main-content .profile-box .profile-info-section2 div {
+  display: flex;
+}
+.main-content .profile-box .profile-info-section2 .general-information {
+  flex-direction: column;
+  gap: var(--fourth-paddind);
+}
+.main-content .profile-box .profile-info-section2 .row .general-information h4,
+.main-content .profile-box .profile-info-section2 .row div h5 {
+  color: var(--third-color);
+  font-weight: 500;
+}
+.main-content .profile-box .profile-info-section2 .row div span {
+  font-size: 0.9rem;
+}
+.main-content .profile-box .profile-info-section2 .general-information .toggle {
+  width: 80px;
+  height: 18px;
+}
+.main-content
+  .profile-box
+  .profile-info-section2
+  .general-information
+  .toggle::before {
+  width: 12px;
+  height: 12px;
+  font-size: 0.7rem;
+}
+.main-content
+  .profile-box
+  .profile-info-section2
+  .general-information
+  .left::before {
+  right: 63px;
 }
