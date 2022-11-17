@@ -22,6 +22,7 @@ a {
   --orange-color: #f59e0b;
   --green-color: #22c55e;
   --eee-color: #eee;
+  --ccc-color: #ccc;
   --main-margin: 30px;
   --secondary-margin: 20px;
   --third-margin: 15px;
@@ -98,11 +99,11 @@ a {
   align-items: center;
 }
 .left {
-  background-color: #ccc;
+  background-color: var(--ccc-color);
 }
 .left::before {
   content: "\f00d";
-  color: #ccc;
+  color: var(--ccc-color);
   right: 43px;
 }
 div.loader {
@@ -1346,7 +1347,7 @@ main .projects-box .projects-box-section2 table tr td a.rejected {
   width: 80%;
   background-color: var(--main-color);
   color: #aaa;
-  border: 1px solid #ccc;
+  border: 1px solid var(--ccc-color);
   cursor: not-allowed;
 }
 .main-content .box .general-info-section2 form .email a {
@@ -1402,7 +1403,7 @@ main .projects-box .projects-box-section2 table tr td a.rejected {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #ccc;
+  border: 1px solid var(--ccc-color);
   border-top-left-radius: var(--secondary-radius);
   border-bottom-left-radius: var(--secondary-radius);
   color: var(--third-color);
@@ -1410,53 +1411,64 @@ main .projects-box .projects-box-section2 table tr td a.rejected {
 .main-content .box .social-info-section2 form div input {
   background-color: var(--secondary-color);
   margin: 0;
-  border: 1px solid #ccc;
+  border: 1px solid var(--ccc-color);
   border-left: 0;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
-.main-content .box .widgets-control-section2 form {
+.main-content .box .widgets-control-section2 form,
+.main-content .box .backup-mangager-section2 form {
   align-items: flex-start;
 }
-.main-content .box .widgets-control-section2 form ul {
+.main-content .box .widgets-control-section2 form ul,
+.main-content .box .backup-mangager-section2 form ul {
   display: flex;
   flex-direction: column;
   gap: var(--secondary-paddind);
 }
-.main-content .box .widgets-control-section2 form li {
+.main-content .box .widgets-control-section2 form ul li,
+.main-content .box .backup-mangager-section2 form ul li {
   display: flex;
   align-items: center;
   padding-left: var(--main-paddind);
   font-weight: 500;
 }
-.main-content .box .widgets-control-section2 form li label {
+.main-content .box .widgets-control-section2 form ul li label,
+.main-content .box .backup-mangager-section2 form ul li label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
   position: relative;
 }
-.main-content .box .widgets-control-section2 form li label::before,
-.main-content .box .widgets-control-section2 form li label::after {
+.main-content .box .widgets-control-section2 form ul li label::before,
+.main-content .box .widgets-control-section2 form ul li label::after,
+.main-content .box .backup-mangager-section2 form ul li label::before,
+.main-content .box .backup-mangager-section2 form ul li label::after {
   content: "";
   position: absolute;
   left: -25px;
   width: 15px;
   height: 15px;
-  border: 1px solid var(--third-color);
+  border: 2px solid var(--third-color);
   border-radius: 3px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
 }
-.main-content .box .widgets-control-section2 form li label::after {
+.main-content .box .widgets-control-section2 form ul li label:hover::before,
+.main-content .box .backup-mangager-section2 form ul li label:hover::before {
+  border-color: var(--blue-color);
+}
+.main-content .box .widgets-control-section2 form ul li label::after,
+.main-content .box .backup-mangager-section2 form ul li label::after {
   color: var(--white-color);
   font-family: var(--fa-style-family-classic);
   content: "\f00c";
   font-weight: 900;
-  top: 0px;
-  left: -25px;
+  font-size: 0.9rem;
   background-color: var(--blue-color);
-  width: 14px;
-  height: 14px;
-  border: 2px solid var(--blue-color);
   transform: scale(0) rotate(360deg);
   -webkit-transform: scale(0) rotate(360deg);
   -moz-transform: scale(0) rotate(360deg);
@@ -1468,18 +1480,173 @@ main .projects-box .projects-box-section2 table tr td a.rejected {
   -ms-transition: 0.3s;
   -o-transition: 0.3s;
 }
-.main-content .box .widgets-control-section2 form input[type="checkbox"] {
+.main-content .box .widgets-control-section2 form ul li input[type="checkbox"],
+.main-content .box .backup-mangager-section2 form ul li input[type="radio"] {
   appearance: none;
 }
 .main-content
   .box
   .widgets-control-section2
   form
+  ul
+  li
   input[type="checkbox"]:checked
+  + label::after,
+.main-content
+  .box
+  .backup-mangager-section2
+  form
+  ul
+  li
+  input[type="radio"]:checked
   + label::after {
+  border-color: var(--blue-color);
   transform: scale(1);
   -webkit-transform: scale(1);
   -moz-transform: scale(1);
   -ms-transform: scale(1);
   -o-transform: scale(1);
+}
+.main-content
+  .box
+  .widgets-control-section2
+  form
+  ul
+  li
+  input[type="checkbox"]:checked
+  + label::before,
+.main-content
+  .box
+  .backup-mangager-section2
+  form
+  ul
+  li
+  input[type="radio"]:checked
+  + label::before {
+  border-color: var(--blue-color);
+}
+.main-content .box .backup-mangager-section2 form {
+  padding-bottom: var(--secondary-paddind);
+  border-bottom: 1px solid var(--eee-color);
+}
+.main-content .box .backup-mangager-section2 form ul li label::before,
+.main-content .box .backup-mangager-section2 form ul li label::after {
+  content: "";
+  border-radius: var(--main-radius);
+  -webkit-border-radius: var(--main-radius);
+  -moz-border-radius: var(--main-radius);
+  -ms-border-radius: var(--main-radius);
+  -o-border-radius: var(--main-radius);
+}
+.main-content .box .backup-mangager-section2 form ul li label::before {
+  width: 17px;
+  height: 17px;
+  box-shadow: 0 0 1px 2px var(--white-color) inset;
+  z-index: 1000;
+}
+.main-content .box .backup-mangager-section2 form ul li label::after {
+  left: -22px;
+  border: 0;
+}
+.main-content .box .backup-manager-section3 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--fifth-padding);
+  padding: var(--secondary-paddind) 0;
+}
+@media (max-width: 767px) {
+  .main-content .box .backup-manager-section3 {
+    flex-direction: column;
+    gap: var(--fourth-paddind);
+  }
+}
+.main-content .box .backup-manager-section3 input {
+  appearance: none;
+}
+.main-content .box .backup-manager-section3 input:checked + div {
+  border-color: var(--blue-color);
+  color: var(--blue-color);
+}
+.main-content .box .backup-manager-section3 div {
+  width: 31%;
+  height: 90px;
+  border: 2px solid var(--eee-color);
+  border-radius: var(--first-radius);
+  -webkit-border-radius: var(--first-radius);
+  -moz-border-radius: var(--first-radius);
+  -ms-border-radius: var(--first-radius);
+  -o-border-radius: var(--first-radius);
+  font-size: 1rem;
+}
+@media (max-width: 767px) {
+  .main-content .box .backup-manager-section3 div {
+    width: 100%;
+  }
+}
+.main-content .box .backup-manager-section3 div label {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--third-paddind);
+  cursor: pointer;
+}
+.main-content .profile-box {
+  width: 100%;
+  display: flex;
+  background-color: var(--white-color);
+  border-radius: var(--first-radius);
+  -webkit-border-radius: var(--first-radius);
+  -moz-border-radius: var(--first-radius);
+  -ms-border-radius: var(--first-radius);
+  -o-border-radius: var(--first-radius);
+}
+.main-content .profile-box .profile-info {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--fourth-paddind);
+  border-right: 1px solid var(--eee-color);
+}
+.main-content .profile-box .profile-info img {
+  width: 110px;
+}
+.main-content .profile-box .profile-info p {
+  color: var(--third-color);
+  margin-bottom: var(--fourth-margin);
+}
+.main-content .profile-box .profile-info .progress {
+  width: 150px;
+  height: 5px;
+  background-color: var(--main-color);
+  border-radius: var(--main-radius);
+  -webkit-border-radius: var(--main-radius);
+  -moz-border-radius: var(--main-radius);
+  -ms-border-radius: var(--main-radius);
+  -o-border-radius: var(--main-radius);
+  overflow: hidden;
+  position: relative;
+}
+.main-content .profile-box .profile-info .progress span {
+  position: absolute;
+  width: 70%;
+  height: 100%;
+  background-color: var(--blue-color);
+  border-radius: var(--main-radius);
+  -webkit-border-radius: var(--main-radius);
+  -moz-border-radius: var(--main-radius);
+  -ms-border-radius: var(--main-radius);
+  -o-border-radius: var(--main-radius);
+}
+.main-content .profile-box .profile-info i {
+  color: var(--orange-color);
+  font-size: 0.9rem;
+}
+.main-content .profile-box .profile-info p:last-of-type {
+  font-size: 0.8rem;
 }
