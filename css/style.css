@@ -1632,7 +1632,7 @@ main .projects-box .projects-box-section2 table tr td a.rejected {
   color: var(--third-color);
   margin-bottom: var(--fourth-margin);
 }
-.main-content .profile-box .profile-info .progress {
+.main-content .progress {
   width: 150px;
   height: 5px;
   background-color: var(--main-color);
@@ -1644,7 +1644,7 @@ main .projects-box .projects-box-section2 table tr td a.rejected {
   overflow: hidden;
   position: relative;
 }
-.main-content .profile-box .profile-info .progress span {
+.main-content .progress span {
   position: absolute;
   width: 70%;
   height: 100%;
@@ -1738,14 +1738,14 @@ main .projects-box .projects-box-section2 table tr td a.rejected {
     display: grid;
   }
 }
-.main-content .profile-main-content-boxes .box .profile-skills .row {
+.main-content .box .profile-skills .row {
   border-bottom: 1px solid var(--eee-color);
   padding: var(--secondary-paddind) 0;
 }
-.main-content .profile-main-content-boxes .box .profile-skills .row ul {
+.main-content .box .profile-skills .row ul {
   display: flex;
 }
-.main-content .profile-main-content-boxes .box .profile-skills .row ul li {
+.main-content .box .profile-skills .row ul li {
   font-size: 0.8rem;
   background-color: var(--eee-color);
   margin-right: var(--fourth-margin);
@@ -1895,4 +1895,163 @@ main .projects-box .projects-box-section2 table tr td a.rejected {
     .row-history {
     align-items: center;
   }
+}
+.main-content .main-content-boxes .box > span {
+  color: var(--third-color);
+  font-size: 0.8rem;
+  align-self: flex-end;
+}
+.projects-main-content-boxes .projects-box-section1 .projects-box-title {
+  line-height: 1.8;
+  font-size: 1rem;
+  transform: translateY(-10px);
+  -webkit-transform: translateY(-10px);
+  -moz-transform: translateY(-10px);
+  -ms-transform: translateY(-10px);
+  -o-transform: translateY(-10px);
+}
+.projects-main-content-boxes .projects-box-section1 .projects-box-title span {
+  font-size: 1.2rem;
+}
+.projects-main-content-boxes .projects-box-section1 .projects-box-title p {
+  font-size: 0.9rem;
+  color: var(--third-color);
+}
+.projects-main-content-boxes .projects-box-section1 .projects-box-images {
+  border-bottom: 1px solid var(--eee-color);
+  padding-bottom: var(--third-paddind);
+  margin-top: var(--main-margin);
+}
+.projects-main-content-boxes .projects-box-section1 .projects-box-images img {
+  width: 35px;
+  border-radius: var(--main-radius);
+  -webkit-border-radius: var(--main-radius);
+  -moz-border-radius: var(--main-radius);
+  -ms-border-radius: var(--main-radius);
+  -o-border-radius: var(--main-radius);
+}
+.projects-main-content-boxes
+  .projects-box-section1
+  .projects-box-images
+  img:not(:first-of-type) {
+  margin-left: -16px;
+  box-shadow: 0 0 0 2px var(--white-color);
+}
+.projects-main-content-boxes .projects-box-section1 .profile-skills ul {
+  justify-content: flex-end;
+}
+@media (max-width: 767px) {
+  .projects-main-content-boxes .projects-box-section1 .profile-skills ul {
+    flex-wrap: wrap;
+    gap: var(--fourth-paddind);
+    justify-content: flex-start;
+  }
+}
+
+.projects-main-content-boxes .projects-box-section1 .progress-holder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--secondary-paddind) 0;
+}
+.projects-main-content-boxes .projects-box-section1 .progress-holder .progress {
+  width: 250px;
+  height: 8px;
+}
+@media (max-width: 500px) {
+  .projects-main-content-boxes
+    .projects-box-section1
+    .progress-holder
+    .progress {
+    width: 230px;
+  }
+}
+.projects-main-content-boxes
+  .projects-box-section1
+  .progress-holder
+  .progress
+  span {
+  background-color: var(--green-color);
+}
+.projects-main-content-boxes .projects-box-section1 .progress-holder span {
+  color: var(--third-color);
+  font-size: 0.95rem;
+}
+.projects-main-content-boxes
+  .box:nth-child(1)
+  .projects-box-section1
+  .progress-holder
+  .progress
+  span {
+  background-color: red;
+  width: 80%;
+}
+.projects-main-content-boxes
+  .box:nth-child(2)
+  .projects-box-section1
+  .progress-holder
+  .progress
+  span {
+  width: 70%;
+}
+.projects-main-content-boxes
+  .box:nth-child(3)
+  .projects-box-section1
+  .progress-holder
+  .progress
+  span {
+  background-color: var(--orange-color);
+  width: 40%;
+}
+.projects-main-content-boxes
+  .box:nth-child(4)
+  .projects-box-section1
+  .progress-holder
+  .progress
+  span {
+  background-color: var(--blue-color);
+  width: 60%;
+}
+.projects-main-content-boxes
+  .box:nth-child(5)
+  .projects-box-section1
+  .progress-holder
+  .progress
+  span {
+  width: 30%;
+}
+.projects-main-content-boxes
+  .box:nth-child(6)
+  .projects-box-section1
+  .progress-holder
+  .progress
+  span {
+  background-color: red;
+  width: 40%;
+}
+.projects-main-content-boxes
+  .box:nth-child(7)
+  .projects-box-section1
+  .progress-holder
+  .progress
+  span {
+  background-color: var(--orange-color);
+  width: 75%;
+}
+.projects-main-content-boxes
+  .box:nth-child(8)
+  .projects-box-section1
+  .progress-holder
+  .progress
+  span {
+  background-color: var(--blue-color);
+  width: 65%;
+}
+.projects-main-content-boxes
+  .box:nth-child(9)
+  .projects-box-section1
+  .progress-holder
+  .progress
+  span {
+  width: 40%;
 }
