@@ -19,10 +19,8 @@ getXmark.onclick = () => {
 };
 if (getLoader) {
   window.addEventListener("load", () => {
-    setTimeout(() => {
-      getLoader.style.display = "none";
-      getPageContent.style.display = "grid";
-    }, 1000);
+    getLoader.style.display = "none";
+    getPageContent.style.display = "grid";
   });
 }
 document.onclick = (e) => {
