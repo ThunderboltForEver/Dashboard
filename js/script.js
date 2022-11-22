@@ -23,7 +23,12 @@ if (getLoader) {
   window.addEventListener("load", () => {
     getLoader.style.display = "none";
     getPageContent.style.display = "grid";
-    activePage = window.location.pathname;
+    activePage = "index.html";
+    getSidebarLink.forEach((item) => {
+      if (item.href.includes(`${activePage}`)) {
+        item.classList.add("active");
+      } else item.classList.remove("active");
+    });
   });
 }
 document.onclick = (e) => {
