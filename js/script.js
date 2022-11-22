@@ -5,6 +5,8 @@ let getPageContent = document.querySelector(".page-content");
 let getLoader = document.querySelector(".loader");
 let getToggle = document.querySelectorAll(".toggle");
 let getHeart = document.querySelector(".heart");
+let getSidebarLink = document.querySelectorAll(".sidebar-link");
+let activePage = window.location.pathname;
 
 getBarItem.onclick = () => {
   getSideBar.style = "transform: translateX(0px);width:220px";
@@ -63,4 +65,10 @@ getToggle.forEach((item) => {
       item.classList.add("left");
     }
   });
+});
+
+getSidebarLink.forEach((item) => {
+  if (item.href.includes(`${activePage}`)) {
+    item.classList.add("active");
+  }
 });
