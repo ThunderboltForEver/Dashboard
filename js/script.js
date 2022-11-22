@@ -23,6 +23,7 @@ if (getLoader) {
   window.addEventListener("load", () => {
     getLoader.style.display = "none";
     getPageContent.style.display = "grid";
+    activePage = window.location.pathname;
   });
 }
 document.onclick = (e) => {
