@@ -7,6 +7,7 @@ let getToggle = document.querySelectorAll(".toggle");
 let getHeart = document.querySelector(".heart");
 let getSidebarLink = document.querySelectorAll(".sidebar-link");
 let activePage = window.location.pathname;
+let getSideBarStatus = false;
 
 getBarItem.onclick = () => {
   getSideBar.style = "transform: translateX(0px);width:220px";
@@ -15,10 +16,21 @@ getBarItem.onclick = () => {
 getXmark.onclick = () => {
   getSideBar.style =
     "transform: translateX(-220px);width:220px;box-shadow:none;";
+  getSideBarStatus = true;
   if (getSideBar.classList.contains("sidebar-active")) {
     getSideBar.classList.remove("sidebar-active");
   }
 };
+window.addEventListener("resize", (e) => {
+  if (getSideBarStatus === true) {
+    if (e.target.innerWidth > 768) {
+      getSideBar.style = "transform: translateX(0px);width:220px";
+    } else {
+      getSideBar.style =
+        "transform: translateX(-220px);width:220px;box-shadow:none;";
+    }
+  }
+});
 if (getLoader) {
   window.addEventListener("load", () => {
     getLoader.style.display = "none";
@@ -42,6 +54,7 @@ document.onclick = (e) => {
       getSideBar.style =
         "transform: translateX(-220px);width:220px;box-shadow:none;";
       getSideBar.classList.remove("sidebar-active");
+      getSideBarStatus = true;
     }
   }
 };
