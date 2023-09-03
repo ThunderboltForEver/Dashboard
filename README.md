@@ -1,6 +1,6 @@
 # Dashboard
 
-Resonsive Multi-Pages Dashboard using Pure Html , CSS and js
+Responsive Multi-Pages Dashboard using Pure Html , CSS and js
 
 # Demo:
 
